@@ -1,6 +1,6 @@
 module.exports = function(RED) {
 
-    var HMC5883L = require('./Compass');
+    var HMC5883L = require('./compass.js');
 
     function HMC5883LNode(config) {
         RED.nodes.createNode(this, config);
