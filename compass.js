@@ -98,10 +98,14 @@ function twos_complement(val, bits) {
  *   sampleRate (string): The sample rate (Hz), must be one of .  Default is '15' Hz (samples per second).
  *   declination (number): The declination, in degrees.  If this is provided the result will be true north, as opposed to magnetic north.
  */
-function Compass(i2cBusNum, options) {
+function Compass(i2cBusNum, i2cAddress, options) {
 
     if (typeof i2cBusNum !== 'number') {
         throw new Error('Compass: i2cBusNum must be a number.');
+    }
+
+    if(i2cAddress){
+        HMC5883L_ADDRESS = i2cAddress;    
     }
 
     if (!options) {
