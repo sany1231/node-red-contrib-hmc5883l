@@ -1,0 +1,49 @@
+<script type="text/javascript">
+    RED.nodes.registerType('hmc5883l',{
+        category: 'Raspberry Pi',
+        color: "#4DFFD4",
+        defaults: {
+            name: {value:""},
+            bus: {value:"1", required:true, validate:RED.validators.number()},
+            address: {value: "0x1E", required:true, validate: function(v) {
+                var n=parseInt(v,16);
+                return v.length==4 && v[0]=="0" && v[1].toUpperCase()=="X" && !isNan(n) && n>=0x10 && n<0x78;
+            }},
+            timer: {value:"1", required:true, validate:RED.validators.number()}
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "",
+        label: function() {
+            return this.name || "hmc5583l";
+        },
+        labelStyle: function() {
+            return this.name ? "node_label_italic" : "";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="hmc5883l">
+    <div class="form-row">
+        <label for="node-input-bus">
+            <i class="fa fa-microchip"></i> BUS
+        </label>
+        <input type="text" id="node-input-bus" placeholder="0x1E">
+    </div>
+    <div class="form-row">
+        <label for="node-input-address"><i class="fa fa-microchip"></i> Address</label>
+        <input type="text" id="node-input-address" placeholder="0x1E">
+    </div>
+    <div class="form-row">
+        <label for="node-input-timer"><i class="fa fa-repeat"></i> Interval (min)</label>
+        <input type="text" id="node-input-timer" placeholder="1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name/topic</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="hmc5883l">
+    <p>Read data from HMC5883L sensor</p>
+</script>
