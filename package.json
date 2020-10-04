@@ -13,6 +13,7 @@
     "compass-hmc5883l": "1.0.3",
     "i2c-bus": ">=5.2.0"
   },
+  "_where": "/root/.node-red",
   "deprecated": false,
   "description": "A Node-RED node to access hmc5883l sensor telemetries",
   "homepage": "https://github.com/sany1231/node-red-contrib-hmc5883l#readme",
