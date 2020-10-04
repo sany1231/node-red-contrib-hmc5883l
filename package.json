@@ -10,14 +10,15 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "compass-hmc5883l": "1.0.3"
+    "compass-hmc5883l": "1.0.3",
+    "i2c-bus": ">=5.2.0"
   },
   "deprecated": false,
   "description": "A Node-RED node to access hmc5883l sensor telemetries",
   "homepage": "https://github.com/sany1231/node-red-contrib-hmc5883l#readme",
   "keywords": [
-    "node",
-    "red",
+    "node-red",
+    "node-red-contrib",
     "compass",
     "hmc5883l"
   ],
@@ -32,5 +33,9 @@
     "type": "git",
     "url": "git+https://github.com/sany1231/node-red-contrib-hmc5883l.git"
   },
+  "publishConfig": { 
+    "registry": "https://npm.pkg.github.com/" 
+  },
+  "readmeFilename": "README.md",
   "version": "0.0.1"
 }
