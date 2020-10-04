@@ -10,7 +10,6 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "compass-hmc5883l": "1.0.3",
     "i2c-bus": ">=5.2.0"
   },
   "_where": "/root/.node-red",
