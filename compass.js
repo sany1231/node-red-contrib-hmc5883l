@@ -105,8 +105,10 @@ function Compass(i2cBusNum, i2cAddress, options) {
     }
 
     if(i2cAddress){
-        HMC5883L_ADDRESS = i2cAddress;    
+        HMC5883L_ADDRESS = i2cAddress;   
     }
+
+    console.log('new address?',HMC5883L_ADDRESS);
 
     if (!options) {
         options = {};
