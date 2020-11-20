@@ -42,7 +42,7 @@ var SAMPLE_RATE = 30;
 
 // Instantiate and initialize.
 var Compass = require('./Compass');
-var compass = new Compass(2, {
+var compass = new Compass(1, 0x0d, {
     sampleRate: SAMPLE_RATE.toString(),
     scale: '0.88',
 });
