@@ -23,3 +23,6 @@ compass.getRawValues(function (err, vals) {
 setTimeout(function(){
     console.log('Response ',msg);
 },200);
+
+const rawData = compass.i2c.readWordSync(0x0d, 0x00);
+console.log(rawData);
